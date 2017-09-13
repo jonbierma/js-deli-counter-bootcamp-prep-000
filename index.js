@@ -2,13 +2,13 @@
 function takeANumber(currentLine, newCustomer){
   currentLine.push(newCustomer);
   var position = currentLine.length
-  return position
+  return `Welcome, ${newCustomer}. You are number ${position} in line`
 }
 
 function nowServing(currentLine){
-  if (nowServing.length > 0){
+  if (currentLine.length > 0){
     var currentCustomer = currentLine.shift()
-    return currentCustomer
+    return `Currently serving ${currentCustomer}`
   } else {
     return "There is nobody waiting to be served!"
   }
@@ -21,7 +21,7 @@ function currentLine(line){
   } else {
     var lineString = "The line is currently: "
     for (var i=0; i<line.length; i++){
-      lineString = lineString + `${i}. ${line[i]}, `
+      lineString = lineString + `${i+1}. ${line[i]}, `
     }
     return lineString
   }
